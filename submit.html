@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HAB Image Submission</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap-4.4.1.css" rel="stylesheet">
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  </head>
+  <body>
+
+	 	<!-- NAVBAR -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+
+       
+
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+       </button>
+
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <ul class="navbar-nav mr-auto">
+             <li class="nav-item">
+                <img src="https://raw.githubusercontent.com/bmosh/habsite/6a32305ca3b3b179ceab14a0dce9a456a5fd01a7/cornell_seal_simple_white.svg" style="width: 100%; height: 60%;"> 
+             </li>
+
+             <li class="nav-item">
+                <a class="nav-link" href="/index.html">Home</a>
+             </li>
+
+             <li class="nav-item active">
+                <a class="nav-link" href="/submit.html">Submit Images</a>
+             </li>
+
+             <li class="nav-item">
+                <a class="nav-link" href="https://richardson.cee.cornell.edu/service-learning-project-advising/">HAB Project</a>
+             </li>
+
+          </ul>
+
+        <button type="button" class="btn btn-white btn-lg">
+          
+          <a href="mailto:nw323@cornell.edu"><i class="fas fa-envelope mr-3 mt-2"></i></a>
+          <a href="https://github.com/bmosh/habsite"><i class="fab fa-github mr-3 mt-2"></i></a>
+          
+        </button>
+       </div>
+    </nav>
+
+		<!--MAIN BODY-->
+    <!--Title Box -->
+    <div class="jumbotron jumbotron-fluid text-center bg" style="height: 100%;">
+        <a class="btn btn-home border" style="margin: 20px; padding: 30px">
+    		  <h1 class="display-5 head-text" >Image Submission Form</h1>
+    		  <hr style="color: #fff">
+    		  <p class="lead" style="color:#1E3D58">Submit Your HAB Images Here!</p>
+  	    </a>
+		</div>
+
+    <br>
+
+    <div class="head-text">
+        <div class="mb-3 input-form">
+            <label for="formFileMultiple" class="form-label head-text">Select Your Images Here!</label>
+            <input class="form-control" type="file" id="formFileMultiple" multiple>
+        </div>
+
+        <hr>
+        
+        <div class="mb-3 input-form">
+            <label for="exampleFormControlInput1" class="form-label">Date</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="(Form: MMDDYY)">
+        </div>
+        
+        <div class="mb-3 input-form">
+            <label for="exampleFormControlInput1" class="form-label">Time of Day</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="(Form: HHMM)">
+        </div>
+
+        <div class="mb-3 input-form">
+            <label for="exampleFormControlInput1" class="form-label">Zone Number </label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="(Lake or latitude/longitude, e.g. 66)">
+        </div>
+
+        <div class="mb-3 input-form">
+            <label for="exampleFormControlInput1" class="form-label">Location Number</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="(e.g. 30)">
+        </div>
+
+        <div class="mb-3 input-form">
+            <label for="exampleFormControlInput1" class="form-label">Optional: Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            <p>Including an email address allows us to return your data to you, once processed! To remain anonymous, leave this blank.</p>
+        </div>
+
+        <hr>
+
+        <div class="mb-6 input-form">
+            <button type="button" class="btn btn-success float-center" style=" width:100%; margin-bottom: 40px; margin-top: 10px;">Submit Information!</button>
+        </div>
+
+          
+    </div>
+
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+      
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
+      
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-analytics.js";
+      
+        // TODO: Add SDKs for Firebase products that you want to use
+      
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+      
+        // Your web app's Firebase configuration
+      
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      
+        const firebaseConfig = {
+      
+          apiKey: "AIzaSyDxr2pbAV-qJJf9RH8IXJe8RoQur9AtQNM",
+      
+          authDomain: "habsite-8f57f.firebaseapp.com",
+      
+          projectId: "habsite-8f57f",
+      
+          storageBucket: "habsite-8f57f.appspot.com",
+      
+          messagingSenderId: "274903329805",
+      
+          appId: "1:274903329805:web:66cbf2f53167ffaeb5b944",
+      
+          measurementId: "G-34QM2PCMLM"
+      
+        };
+      
+      
+        // Initialize Firebase
+      
+        const app = initializeApp(firebaseConfig);
+      
+        const analytics = getAnalytics(app);
+      
+      </script>
+      
+  </body>
+</html>
